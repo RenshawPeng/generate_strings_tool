@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="bin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/generator_language_config/bin/poi-excelant-3.8-20120326.jar!/" />
+      <root url="jar://$PROJECT_DIR$/generator_language_config/bin/poi-ooxml-3.8-20120326.jar!/" />
+      <root url="jar://$PROJECT_DIR$/generator_language_config/bin/stax-api-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/generator_language_config/bin/poi-3.8-20120326.jar!/" />
+      <root url="jar://$PROJECT_DIR$/generator_language_config/bin/poi-ooxml-schemas-3.8-20120326.jar!/" />
+      <root url="jar://$PROJECT_DIR$/generator_language_config/bin/poi-examples-3.8-20120326.jar!/" />
+      <root url="jar://$PROJECT_DIR$/generator_language_config/bin/dom4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/generator_language_config/bin/xmlbeans-2.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/generator_language_config/bin/poi-scratchpad-3.8-20120326.jar!/" />
+      <root url="jar://$PROJECT_DIR$/generator_language_config/bin/dom4j-1.6.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

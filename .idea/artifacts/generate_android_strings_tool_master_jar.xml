@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="generate_android_strings_tool-master:jar">
+    <output-path>$USER_HOME$</output-path>
+    <root id="archive" name="generate_android_strings_tool-master.jar">
+      <element id="module-output" name="generate_android_strings_tool-master" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/library/xmlbeans-2.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/library/stax-api-1.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/library/poi-scratchpad-3.8-20120326.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/library/poi-ooxml-schemas-3.8-20120326.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/library/poi-examples-3.8-20120326.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/library/poi-3.8-20120326.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/library/dom4j-1.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/library/poi-excelant-3.8-20120326.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/library/dom4j.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/library/poi-ooxml-3.8-20120326.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/bin/poi-excelant-3.8-20120326.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/bin/poi-ooxml-3.8-20120326.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/bin/stax-api-1.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/bin/poi-3.8-20120326.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/bin/poi-ooxml-schemas-3.8-20120326.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/bin/poi-examples-3.8-20120326.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/bin/dom4j.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/bin/xmlbeans-2.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/bin/poi-scratchpad-3.8-20120326.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/bin/dom4j-1.6.1.jar" path-in-jar="/" />
+      <element id="library" level="project" name="bin" />
+      <element id="library" level="project" name="library" />
+    </root>
+  </artifact>
+</component>
