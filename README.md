@@ -1,38 +1,41 @@
-# Excel生成Android Stings.xml工具
+#### 工具起源
 
-![WX20180427-134909.png](https://upload-images.jianshu.io/upload_images/5488544-e1594caa69c3184b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+最近在做国际化多语言适配，暂时有 18 种语言，pc 站有 30 多种好像，平常所有显示的文字交于专人负责整理和翻译，翻译完成后把整理好的Excel交给开发人员进行适配。然而并没有这样简单。。。
+各种修改、调整、新增文字，每次修改后开发人员都得核对一次，然后各个在strings.xml中修改。
 
-![WX20180427-134918.png](https://upload-images.jianshu.io/upload_images/5488544-c5ce4feebbce4ff8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+可想而知这是一件多么烦锁的事情，为了从这样一个重复、毫无意义的工作中解脱出来，我花了半天的时间撸了一个工具。有了工具后拿到翻译好的Excel，用工具来一键生成各国语言的资源文件。整理资源也是一样的选择strings.xml一键生成Excel。。这样是不是爽多了？？
 
-![WX20180427-134930.png](https://upload-images.jianshu.io/upload_images/5488544-17b25d8d4466ef60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+#### [](#%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8)工具的使用
 
-
-#### Excel 表格格式
-key | cn | en |ja
----|---|---|---
-login |	登录	| Login	 | 登録
-name		| 姓名	| 	name		| ユーザーネーム
-mail_address		| 邮箱	| 	Mail address		| メールアドレス
-password	| 	密码		| Password		| パスワード
-
-#### 支持注释
-
-![WX20180427-150935.png](https://upload-images.jianshu.io/upload_images/5488544-f19fafad39a0b45b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-#### 生成结果
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<resources>
-  <!--test-->
-  <string name="login">登录</string>
-  <string name="name">姓名</string>
-  <string name="mail_address">邮箱</string>
-  <string name="password">密码</string>
-</resources>
-```
+![多语言工具](https://upload-images.jianshu.io/upload_images/1432234-dd22e47b7fd63cb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-#### *注意事项
-    key：固定标识
+![image.png](https://upload-images.jianshu.io/upload_images/1432234-73f64169761a671f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![Android](https://upload-images.jianshu.io/upload_images/1432234-96e71bfa21f12c84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![iOS](https://upload-images.jianshu.io/upload_images/1432234-7c9e15d88edbf2ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+写了一个简单的界面，导入项目后运行UIMain 就能愉快的玩耍了！
+表格格式：
+![image.png](https://upload-images.jianshu.io/upload_images/1432234-53e1eb8e54ac4979.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+*   注意事项
+    key：固定标识，这里 Android 和 iOS 未做区分（可自行拓展后徐芬）
     支持注释：key列可以使用注释（直接在Excel中写入注释）
-    完善表格 别出现空行，不会报错但是会写空字符串
+
+生成结果：
+
+![Android](https://upload-images.jianshu.io/upload_images/1432234-96e71bfa21f12c84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![iOS](https://upload-images.jianshu.io/upload_images/1432234-7c9e15d88edbf2ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+#### [](#%E9%80%82%E9%85%8D%E4%B8%AD%E7%9A%84%E4%B8%80%E7%82%B9%E5%B0%8F%E5%BB%BA%E8%AE%AE)拓展
+- 每次都会读取原本的 xml 文件或者 strings 文件，然后再写进去所以既可以支持新建 key，也可以支持在原本的 key 上修改后，会将修改后的文案直接覆盖。
+
+-源码中也包含 strings 转 Excel，xml 转 Excel，工具入口就不放出来了。
+
+

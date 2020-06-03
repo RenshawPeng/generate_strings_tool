@@ -17,7 +17,6 @@ import static generator_language_config.ExcelUtil.ANNOTATION_FLAG;
 public final class XMLUtil {
     public static void writFormatXML(File file, Map<String, Object> map) {
 
-
         try {
             Map<String, Object> readFormatXML = readFormatXML(file);
             readFormatXML.putAll(map);
