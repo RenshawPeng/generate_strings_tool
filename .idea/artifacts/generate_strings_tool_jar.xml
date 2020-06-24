@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="generate_android_strings_tool-master:jar">
-    <output-path>$USER_HOME$</output-path>
+  <artifact type="jar" name="generate_strings_tool:jar">
+    <output-path>$PROJECT_DIR$/..</output-path>
     <root id="archive" name="generate_android_strings_tool-master.jar">
       <element id="module-output" name="generate_android_strings_tool-master" />
       <element id="extracted-dir" path="$PROJECT_DIR$/generator_language_config/library/xmlbeans-2.3.0.jar" path-in-jar="/" />
