@@ -1,4 +1,7 @@
-package generator_language_config;
+package generator_language_config.ui;
+
+import generator_language_config.util.ExcelFilter;
+import generator_language_config.util.ExcelToStringsUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

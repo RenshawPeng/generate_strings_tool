@@ -1,4 +1,4 @@
-package generator_language_config;
+package generator_language_config.util;
 
 import org.dom4j.*;
 import org.dom4j.io.OutputFormat;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static generator_language_config.ExcelUtil.ANNOTATION_FLAG;
+import static generator_language_config.util.ExcelUtil.ANNOTATION_FLAG;
 
 public final class XMLUtil {
     public static void writFormatXML(File file, Map<String, Object> map) {

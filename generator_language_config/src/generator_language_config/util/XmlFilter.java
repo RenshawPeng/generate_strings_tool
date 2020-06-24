@@ -1,4 +1,4 @@
-package generator_language_config;
+package generator_language_config.util;
 
 import javax.swing.filechooser.FileFilter;
 import java.io.File;

@@ -1,4 +1,7 @@
-package generator_language_config;
+package generator_language_config.ui;
+
+import generator_language_config.util.ExcelFilter;
+import generator_language_config.util.ExcelUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -6,7 +9,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
-public class XmlToExcelFrame extends JFrame implements ActionListener {
+public class ExcelToXmlFrame extends JFrame implements ActionListener {
     private JButton homeButton;
     private JButton openFileButton;
     private JTextField openFileTextField;
@@ -21,8 +24,8 @@ public class XmlToExcelFrame extends JFrame implements ActionListener {
     private File openFile;
     private File outputFile;
 
-    public XmlToExcelFrame() {
-        super("XML生成Excel");
+    public ExcelToXmlFrame() {
+        super("Excel生成XML-Metal");
         initUI();
         this.setResizable(false);
         this.setSize(500, 500);
@@ -38,11 +41,10 @@ public class XmlToExcelFrame extends JFrame implements ActionListener {
         homeButton.addActionListener(this);
         this.add(homeButton);
 
-        openFileLabel = new JLabel("XML:");
+        openFileLabel = new JLabel("Excel:");
         openFileLabel.setBounds(60, 90, 40, 40);
 
         openFileTextField = new JTextField(200);
-        openFileTextField.setEnabled(false);
         openFileTextField.setBounds(110, 90, 200, 40);
         this.add(openFileTextField);
 
@@ -57,7 +59,6 @@ public class XmlToExcelFrame extends JFrame implements ActionListener {
         outputFileLabel.setBounds(40, 160, 60, 40);
 
         outputFileTextField = new JTextField(200);
-        outputFileTextField.setEnabled(false);
         outputFileTextField.setBounds(110, 160, 200, 40);
 
 
@@ -76,25 +77,36 @@ public class XmlToExcelFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == homeButton){
-            MainFrame frame=new MainFrame();
-            XmlToExcelFrame.this.dispose();
-        }else if (e.getSource() == openFileButton) {
-            selectXml();
+        if (e.getSource() == homeButton) {
+            MainFrame frame = new MainFrame();
+            ExcelToXmlFrame.this.dispose();
+        } else if (e.getSource() == openFileButton) {
+            selectExcel();
         } else if (e.getSource() == outputFileButton) {
             selectFile();
         } else if (e.getSource() == generatorButton) {
+            String openFileText = openFileTextField.getText();
+            if (openFile == null && openFileText != null && !openFileText.equals("")) {
+                outputFile = new File(openFileText);
+            }
+
             if (openFile == null) {
-                JOptionPane.showMessageDialog(null, "请选择strings.xml", "提示", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "请选择Excel", "提示", JOptionPane.WARNING_MESSAGE);
                 return;
             }
+            String text = outputFileTextField.getText();
+
+            if (outputFile == null && text != null && !text.equals("")) {
+                outputFile = new File(text);
+            }
+
             if (outputFile == null) {
-                JOptionPane.showMessageDialog(null, "请选择Excel生成位置", "提示", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "请选择XML生成位置", "提示", JOptionPane.WARNING_MESSAGE);
                 return;
             }
             try {
                 ExcelUtil excelUtil = new ExcelUtil();
-                excelUtil.writXLSXExcel(openFile, outputFile);
+                excelUtil.readExcel(openFile, outputFile);
                 JOptionPane.showMessageDialog(null, "生成完毕", "提示", JOptionPane.WARNING_MESSAGE);
             } catch (IOException e1) {
                 JOptionPane.showMessageDialog(null, "很抱歉，发生错误！", "提示", JOptionPane.WARNING_MESSAGE);
@@ -103,11 +115,11 @@ public class XmlToExcelFrame extends JFrame implements ActionListener {
         }
     }
 
-    private File selectXml() {
+    private File selectExcel() {
         JFileChooser chooser = new JFileChooser();
         chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         chooser.setAcceptAllFileFilterUsed(false);
-        chooser.addChoosableFileFilter(new XmlFilter());
+        chooser.addChoosableFileFilter(new ExcelFilter());
         chooser.showDialog(new JLabel(), "选择");
         File file = chooser.getSelectedFile();
         if (file != null && file.isFile()) {

@@ -1,10 +1,11 @@
-package generator_language_config;
+package generator_language_config.util;
 
 import javax.swing.filechooser.FileFilter;
 import java.io.File;
 
-public class StringsFilter extends FileFilter {
-    public static final String strings = "strings";
+public class ExcelFilter extends FileFilter {
+    public static final String XLSX = "xlsx";
+    public static final String XLS = "xls";
 
 
     @Override
@@ -16,7 +17,7 @@ public class StringsFilter extends FileFilter {
         int index = fileName.lastIndexOf('.');
         if (index > 0 && index < fileName.length() - 1) {
             String extension = fileName.substring(index + 1).toLowerCase();
-            if (extension.equals(strings))
+            if (extension.equals(XLSX) || extension.equals(XLS))
                 return true;
         }
         return false;
@@ -24,6 +25,6 @@ public class StringsFilter extends FileFilter {
 
     @Override
     public String getDescription() {
-        return "strings";
+        return "xlsx,xls";
     }
 }

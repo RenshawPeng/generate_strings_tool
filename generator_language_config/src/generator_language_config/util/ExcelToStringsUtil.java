@@ -1,4 +1,4 @@
-package generator_language_config;
+package generator_language_config.util;
 
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.poifs.filesystem.OfficeXmlFileException;
