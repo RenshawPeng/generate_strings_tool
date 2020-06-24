@@ -1,7 +1,5 @@
 package generator_language_config;
 
-import generator_language_config.frame.MainFrame;
-
 import javax.swing.*;
 
 public class UIMain {

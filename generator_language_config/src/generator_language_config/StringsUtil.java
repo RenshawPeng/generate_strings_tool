@@ -2,7 +2,10 @@ package generator_language_config;
 
 
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class StringsUtil {
     private static final String KEY_FLAG = "key";
