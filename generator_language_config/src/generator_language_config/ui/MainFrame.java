@@ -3,6 +3,7 @@ package generator_language_config.ui;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 public class MainFrame extends JFrame implements ActionListener {
     private JButton excelToXmlButton;
