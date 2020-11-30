@@ -18,8 +18,12 @@ public class ExcelUtil {
     public static final String DEFAULT_FLAG = "default";
 
     public void readExcel(File inputFile, File outputFile) throws IOException {
-        if (!inputFile.exists() || !outputFile.exists()) {
-            throw new IOException("文件不存在");
+        if (!inputFile.exists()) {
+            throw new IOException("Excel文件不存在");
+        }
+
+        if (!outputFile.exists()) {
+            throw new IOException("资源文件");
         }
         String fileName = inputFile.getName();
         String extension = fileName.lastIndexOf(".") == -1 ? "" : fileName.substring(fileName.lastIndexOf(".") + 1);
@@ -150,12 +154,14 @@ public class ExcelUtil {
                         break;
                     }
                     String key = row.getCell(row.getFirstCellNum()).getStringCellValue();
+
                     if (containAnnotationKey(key)) {
                         map.put(ANNOTATION_FLAG + j, key.replace("<!--", "").replace("-->", ""));
                         continue;
                     }
                     HSSFCell currentCell = sheet.getRow(j).getCell(i);
                     Object value = getCellValue(currentCell);
+
                     map.put(key, value);
                 }
                 File xmlFile = new File(outputFile + File.separator + "string-" + fileList.get(i - 1) + ".xml");
@@ -209,9 +215,41 @@ public class ExcelUtil {
                         map.put(ANNOTATION_FLAG + j, key.replace("<!--", "").replace("-->", ""));
                         continue;
                     }
+                    key = key.replace(" ", "_").
+                            replace("%", "").
+                            replace("+", "").
+                            replace("&", "").
+                            replace("<", "").
+                            replace(">", "").
+                            replace("'", "").
+                            replace(",", "_").
+                            replace(".", "").
+                            replace("=", "").
+                            replace("(", "").
+                            replace(")", "").
+                            replace("[", "").
+                            replace("}", "").
+                            replace("]", "").
+                            replace("{", "").
+                            replace("!", "").
+                            replace("@", "").
+                            replace("#", "").
+                            replace("$", "").
+                            replace("^", "").
+                            replace("*", "").
+                            replace(";", "").
+                            replace("/", "").
+                            replace("|", "").
+                            replace(":", "").
+                            toLowerCase();
+                    System.out.println("  key == " + key);
                     XSSFCell currentCell = sheet.getRow(j).getCell(i);
                     Object value = getCellValue(currentCell);
-                    map.put(key, value);
+                    if (value instanceof String && (((String) value).length() == 0 || ((String) value).equalsIgnoreCase(""))) {
+                    } else {
+                        map.put(key, value);
+
+                    }
                 }
                 String lang = fileList.get(i - 1);
                 File xmlFile = new File(outputFile + File.separator + "values-" + lang + File.separator + "strings" + ".xml");
