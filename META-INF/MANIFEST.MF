@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: generator_language_config.UIMain
+Class-Path: xmlbeans-2.3.0.jar stax-api-1.0.1.jar poi-scratchpad-3.8-201
+ 20326.jar poi-ooxml-schemas-3.8-20120326.jar poi-examples-3.8-20120326.
+ jar poi-3.8-20120326.jar dom4j-1.6.1.jar poi-excelant-3.8-20120326.jar 
+ dom4j.jar poi-ooxml-3.8-20120326.jar
+
